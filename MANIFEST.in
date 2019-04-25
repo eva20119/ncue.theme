@@ -1,0 +1,4 @@
+graft src/ncue
+graft docs
+include *.rst
+global-exclude *.pyc

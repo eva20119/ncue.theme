@@ -1,0 +1,6 @@
+[report]
+include =
+    src/ncue/*
+omit =
+    */test*
+    */upgrades/*
