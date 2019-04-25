@@ -1,0 +1,32 @@
+<nav id="portal-breadcrumbs" class="plone-breadcrumb"
+         i18n:domain="plone"
+         tal:define="breadcrumbs view/breadcrumbs">
+  <div class="container breadcrumb">
+    <div class="container">
+      <div>
+        <span id="breadcrumbs-home">
+          <a tal:attributes="href view/navigation_root_url">回首頁</a>
+        </span>
+        <tal:repeat 
+          repeat="crumb breadcrumbs"
+          >
+          <tal:item tal:define="is_last repeat/crumb/end;
+                                url crumb/absolute_url;
+                                title crumb/Title">
+            <span>/</span>
+            <a href="#"
+                tal:omit-tag="not: url"
+                tal:condition="python:not is_last"
+                tal:attributes="href url"
+                tal:content="title">
+                    crumb
+            </a>
+            <span id="breadcrumbs-current"
+                  tal:condition="is_last"
+                  tal:content="title">crumb</span>
+          </tal:item>
+        </tal:repeat>
+      </div>
+    </div>
+  </div>
+</nav>

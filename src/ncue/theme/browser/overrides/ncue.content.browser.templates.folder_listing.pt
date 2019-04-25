@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <metal:listingmacro define-macro="listing">
+    <tal:results define="batch view/batch;">
+        <tal:listing condition="batch">
+            
+            <tal:repeat repeat="item batch" metal:define-macro="entries">
+                <tal:block tal:define="obj item/getObject;
+                    item_url item/getURL;
+                    item_title item/Title;
+                    ">
+                  <ul class="vertical_list type2">
+                    <li class="clearfix">
+                      <div class="scale_image_container">
+                        <a href="${item_url}">
+                          <!-- <img src="https://lh3.googleusercontent.com/F6lCwMSUh5iGqGaNG9ZcwSvyjGHCtcn1OGZwLRawTAeqyHwLJMVs_0bmX5D7a3b2GuyuXA=s126" alt="" class="scale_image"> -->
+                          <img src="${item_url}/@@images/image" alt="" class="scale_image">
+                        </a>
+                      </div>
+                      <div class="wrapper">
+                        <div class="clearfix">
+                          <div class="f_left">
+                            <div class="event_date">${python: view.toLocalizedTime(obj.effective_date)}</div>
+                          </div>
+                        </div>
+                        <div class="post_text">
+                          <h4 class="post_title"><a href="${item_url}">${item_title}</a></h4>
+                          <p style='word-break: break-all;'>${python: obj.description}</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </tal:block>
+            </tal:repeat>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="pagination-bar pagination_block">
+                        <div class="pagination-bar" metal:use-macro="context/batch_macros/macros/navigation" />
+                    </div>
+                </div>
+            </div>
+
+        </tal:listing>
+    </tal:results>
+  </metal:listingmacro>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

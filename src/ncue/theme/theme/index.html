@@ -1,62 +1,444 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Plone Theme</title>
-    <link rel="shortcut icon" type="image/x-icon"
-          href="barceloneta-favicon.ico" />
-    <link rel="apple-touch-icon"
-          href="barceloneta-apple-touch-icon.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="barceloneta-apple-touch-icon-144x144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="barceloneta-apple-touch-icon-114x114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="barceloneta-apple-touch-icon-72x72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"
-          href="barceloneta-apple-touch-icon-57x57-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed"
-          href="barceloneta-apple-touch-icon-precomposed.png" />
-  </head>
-  <body>
-    <section id="portal-toolbar">
-    </section>
-    <div class="outer-wrapper">
-      <header id="content-header" role="banner">
-        <div class="container">
-          <header id="portal-top">
-          </header>
-          <div id="anonymous-actions">
-          </div>
-        </div>
-      </header>
-      <div id="mainnavigation-wrapper">
-        <div id="mainnavigation">
-        </div>
-      </div>
-      <div id="above-content-wrapper">
-          <div id="above-content">
-          </div>
-      </div>
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+  <title>國立彰化師範大學公共事務與公民教育學系</title>
+  <meta name = "format-detection" content = "telephone=no" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!--meta info-->
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" type="image/x-icon" href="images/fav_icon.ico">
+  <!--stylesheet include-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" media="all" href="plugins/layerslider/css/layerslider.css">
+  <!--modernizr-->
+  <script src="js/jquery.modernizr.js"></script>
+  
+</head>
+<body class="wide_layout">
+  
+  <div class="loader"></div>
+  <!--[if (lt IE 9) | IE 9]>
+    <div class="ie_message_block">
       <div class="container">
-
-        <!-- DELETE ME: -->
-        <h1 class="custom-theme-marker">Custom Plone theme based on Baceloneta</h1>
-
-        <div class="row">
-          <aside id="global_statusmessage"></aside>
+        <div class="wrapper">
+          <div class="clearfix"><i class="fa fa-exclamation-triangle f_left"></i><b>Attention!</b> This page may   not display correctly. You are using an outdated version of Internet Explorer. For a faster, safer browsing experience.<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode" class="button button_type_3 button_grey_light f_right" target="_blank">Update Now!</a></div>
         </div>
-        <main id="main-container" class="row row-offcanvas row-offcanvas-right" role="main">
-          <div id="column1-container">
+      </div>
+    </div>
+  <![endif]-->
+
+  <!--cookie-->
+  <!-- <div class="cookie">
+          <div class="container">
+            <div class="clearfix">
+              <span>Please note this website requires cookies in order to function correctly, they do not store any specific information about you personally.</span>
+              <div class="f_right"><a href="#" class="button button_type_3 button_orange">Accept Cookies</a><a href="#" class="button button_type_3 button_grey_light">Read More</a></div>
+            </div>
           </div>
-          <div id="content-container">
+        </div>-->
+  <div class="wrapper_container">
+    <!--==============================header=================================-->
+    <header role="banner" class="header header-main">
+      <div class="h_top_part">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="header_top mobile_menu var2">
+                <nav>
+                  <ul>
+                    <li><a href="#">網站導覽</a></li>
+                    <li><a href="#">無障礙宣告</a></li>
+                    <li><a href="#">本校首頁</a></li>
+                  </ul>
+                </nav>
+                <div class="login_block">
+                  <ul>
+                    <!--language settings-->
+                    <li class="lang_button">
+                      <a role="button" href="#"><img src="images/flag_en.jpg" alt=""><span>English</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="column2-container">
+        </div>
+      </div>
+      <div class="h_bot_part">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="clearfix">
+                <a href="index.html" class="f_left logo"><img src="images/logo_main.png" alt=""></a>
+                <a href="#" class="f_right"><img src="http://localhost:8080/Plone/++theme++theme/images/right_logo.png" alt=""></a>
+              </div>
+            </div>
           </div>
-        </main><!--/row-->
-      </div><!--/container-->
-    </div> <!--/outer-wrapper -->
-    <footer id="portal-footer-wrapper" role="contentinfo">
-      <div class="container" id="portal-footer"></div>
+        </div>
+      </div>
+      <!--main menu container-->
+      <div class="menu_wrap">
+        <div class="menu_border">
+          <div class="container clearfix menu_border_wrap">
+            <!--button for responsive menu-->
+            <button id="menu_button">
+              Menu
+            </button>
+            <!--main menu-->
+            <nav role="navigation" class="main_menu menu_var2">  
+              <ul>
+                <li class="current"><a href="#">回首頁<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                   
+                </li>
+                <li class="menu_1"><a href="#">系所簡介<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">系所介紹</a></li>
+                      <li><a href="#">發展目標</a></li>
+                      <li><a href="#">未來展望</a></li>
+					  <li><a href="#">資源設備</a></li>
+					  <li><a href="#">聯絡我們</a></li>
+					  <li><a href="#">系所法規</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_2"><a href="#">系所成員<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">師資介紹</a></li>
+                      <li><a href="#">職員介紹</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_3"><a href="#">招生資訊<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">學士班</a></li>
+                      <li><a href="#">碩士班</a></li>
+					  <li><a href="#">在職碩士學位班</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_4"><a href="#">課程介紹<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                  <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">學士班</a></li>
+                      <li><a href="#">碩士班</a></li>
+					  <li><a href="#">在職碩士學位班</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_5"><a href="#">學術資訊<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                 <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">研討會</a></li>
+                      <li><a href="#">學術論壇</a></li>
+					  <li><a href="#">專題演講</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_6"><a href="#">國際交流
+<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                  <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">交換生</a></li>
+                      <li><a href="#">研討會/演講/論壇</a></li>
+					  <li><a href="#">見習/實習</a></li>
+					  <li><a href="#">移地學習/營隊</a></li>
+					  <li><a href="#">雙聯學位</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_8"><a href="#">學生園地<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                  <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">榮譽表現</a></li>
+                      <li><a href="#">活動花絮</a></li>
+					  <li><a href="#">依舉辦年度分類</a></li>
+					  <li><a href="#">獎助學金</a></li>
+					  <li><a href="#">系所學會</a></li>
+					  <li><a href="#">系友專區</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu_9"><a href="#">相關網站<span class="plus"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span></a>
+                  <!--sub menu-->
+                  <div class="sub_menu_wrap type_2 clearfix">
+                    <ul>
+                      <li><a href="#">國內相關系所</a></li>
+                      <li><a href="#">國外相關系所</a></li>
+                      <li><a href="#">其它</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <div class="search-holder">
+              <div class="search_box">
+                
+                <button class="search_button button button_orange_hover">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+              <!--search form-->
+              <div class="searchform_wrap var2">
+                <div class="container vc_child h_inherit relative">
+                  <form role="search">
+                    <input type="text" name="search" placeholder="請輸入相關關鍵字查詢">
+                  </form>
+                  <button class="close_search_form">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--==============================Breadcrumb================================-->
+    <div class="breadcrumb">
+      <div class="container">
+        <div>
+          <span>
+            <a href="#">回首頁</a>
+          </span> 
+          <span>/</span>
+          <span>沿革與遠景</span>
+        </div>
+      </div>
+    </div>
+    <!--==============================content================================-->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div id="content-container"></div>
+          <aside id="sidebar" class="col-md-4 col-sm-12">
+            <!--placeholder-->
+			<!--social media-->
+            <div class="section" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+              <h3 class="section_title">系所訊息</h3>
+              <ul class="social_media_list clearfix">
+                <li>
+                  <a href="#" class="rss">
+                    <i class="fa fa-phone"></i>
+                    <p>聯絡電話</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="fb">
+                    <i class="fa fa-hand-o-right"></i>
+                    <p>系所法規</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="you_tube">
+                    <i class="fa fa-map-marker"></i>
+                    <p>交通與地圖</p>
+                  </a>
+                </li>
+              </ul>
+            </div>  
+			  
+            <div class="section t_align_c" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+              <a href="#" class="m_top_50 d_block"><img src="images/336x280.jpg" alt=""></a>
+            </div>
+	
+			<div class="section t_align_c" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+              <a href="#" class="m_top_50 d_block"><img src="images/336x280-2.jpg" alt=""></a>
+            </div>
+		
+          </aside>
+        </div>
+      </div>
+    </div>
+    <!--==============================footer=================================-->
+    <!--markup footer-->
+    <footer class="footer footer-main">
+      <div class="footer_top_part">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="widget widget_text appear-animation fadeInDown appear-animation-visible" data-appear-animation="fadeInDown" data-appear-animation-delay="1150" style="-webkit-animation: 1150ms;">
+                <a href="index.html" class="logo"><img src="images/logo_main.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9">
+              <div class="widget widget_categories appear-animation fadeInDown appear-animation-visible" data-appear-animation="fadeInDown" data-appear-animation-delay="1150" style="-webkit-animation: 1150ms;">
+                <ul class="categories_list">
+                  <li>
+                    <ul>
+                      <li>版權所有 © 2019 國立彰化師範大學公共事務與公民教育學系. All rights reserved.<br>
+地址：500 彰化市進德路1號・電話：(04)7232105轉1937、1938、1861・傳真：(04)7211255・E-mail：polisci@cc2.ncue.edu.tw</li>
+                     
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-  </body>
+  </div>
+
+  <!--scripts include-->
+  <script src="js/jquery-2.1.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.queryloader2.min.js"></script>
+  <script src="js/jflickrfeed.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/retina.js"></script>
+  <script src="js/apear.js"></script>
+  <script src="js/circles.min.js"></script>
+  <script src="plugins/twitter/jquery.tweet.min.js"></script>
+  <script src="plugins/layerslider/js/greensock.js"></script>
+  <script src="plugins/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+  <script src="plugins/layerslider/js/layerslider.transitions.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    var colors = [['#fa985d', '#ffffff']], circles = [];
+    var child = document.getElementById('circles-3');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      6.2,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-4');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      6.2,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-8');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      8.0,
+        radius:     19,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-9');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      7.7,
+        radius:     19,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-10');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      9.2,
+        radius:     19,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-11');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      7.4,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-12');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      6.5,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-13');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      8.6,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+
+    var child = document.getElementById('circles-14');
+    circles.push(Circles.create({
+        id:         child.id,
+        value:      9.3,
+        radius:     14,
+        width:      3,
+        maxValue:   10,
+        duration:   1000,
+        text:       function(value){return value;},
+        colors:    ['#fa985d', '#ffffff']
+    }));
+  </script>
+
+  <script>
+    $('#layerslider').layerSlider({
+      autoStart: false,
+      responsive: true,
+      skinsPath : '',
+      imgPreload : false,
+      navPrevNext: true,
+      navButtons: false,
+      hoverPrevNext: false,
+      responsiveUnder : 940
+    });
+  </script>
+  
+
+</body>
 </html>

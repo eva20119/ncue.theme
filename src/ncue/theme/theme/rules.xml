@@ -5,6 +5,10 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+<xi:include href="backend.xml" />
+<!-- Only theme front end pages -->
+<rules css:if-content="body.frontend#visual-portal-wrapper">
+
   <theme href="index.html" />
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
@@ -21,19 +25,7 @@
     <drop css:content="head link[rel='apple-touch-icon']" />
     <drop css:content="head link[rel='shortcut icon']" />
     <!-- drop the theme stylesheets -->
-    <drop theme="/html/head/link[rel='stylesheet']" />
-    <!-- CSS -->
-    <after css:theme-children="head" css:content="head link" />
-    <!-- Script -->
-    <!--
-      Make sure that the backend.xml you are using, is not pulling the content scripts again!
-      Using it twice cause the scripts being pulled twice and could lead to JS errors.
-      See https://github.com/plone/plonetheme.barceloneta/issues/158
-
-      You can pull the scripts either inside or outside of the backend only block,
-      depending on, if you need the Plone scripts in your frontend or not.
-    -->
-    <after css:theme-children="head" css:content="head script" />
+   
   </rules>
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
@@ -50,25 +42,13 @@
 
     <xsl:variable name="central">
       <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-8</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-8</xsl:if>
       <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
     </xsl:variable>
 
     <div class="{$central}">
-      <!-- <p class="pull-right visible-xs">
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-      </p> -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <xsl:apply-templates css:select="#content" />
-        </div>
-      </div>
-      <footer class="row">
-        <div class="col-xs-12 col-sm-12">
-          <xsl:copy-of css:select="#viewlet-below-content" />
-        </div>
-      </footer>
+      <xsl:apply-templates css:select="#content-core" />
     </div>
   </replace>
 
@@ -101,10 +81,32 @@
   <replace css:theme="#portal-top" css:content-children="#portal-top" />
 
   <!-- Footer -->
-  <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
+  <!-- <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" /> -->
 
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
   <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
 
+  <drop css:content="#edit-zone"/>
+
+  <!-- banner -->
+  <after css:content=".banner" css:theme="#header" />
+  <!-- nav -->
+  <replace css:content="#portal-globalnav" css:theme=".main_menu.menu_var2 ul" />
+  <!-- logo -->
+  <replace css:content="#portal-logo" css:theme=".f_left.logo"/>
+  <replace css:content="#portal-logo" css:theme=".logo"/>
+
+  <!--js slot-->
+  <after css:theme-children="body" css:content-children="#js-bottom-slot" />
+
+  <!-- path bar -->
+  <replace css:content-children="#portal-breadcrumbs" css:theme=".breadcrumb"/>
+  <!-- drop path bar if cover view -->
+  <drop css:content=".breadcrumb" css:if-content=".template-cover_view"/>
+
+  <!-- sidebar -->
+  <replace css:content="#sidebar" css:theme="#sidebar"/>
+  
+</rules>
 </rules>
