@@ -53,7 +53,7 @@
   </replace>
 
   <!-- Alert message -->
-  <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+  <replace css:theme="#global_statusmessage" css:content-children="#global_statusmessage" />
 
   <!-- Left column -->
   <rules css:if-content="#portal-column-one">
@@ -107,6 +107,8 @@
 
   <!-- sidebar -->
   <replace css:content="#sidebar" css:theme="#sidebar"/>
+
+  <drop css:content="#sidebar" css:if-content=".template-contact_us"/>
   
 </rules>
 </rules>

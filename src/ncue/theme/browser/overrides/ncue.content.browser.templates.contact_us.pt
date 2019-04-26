@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal" xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en"
+  metal:use-macro="context/main_template/macros/master" i18n:domain="plone">
+
+<body>
+  <metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+      <style>
+        .info{
+          font-size: 23px;
+          background: black;
+          color: white;
+          padding: 10px;
+          border-radius: 11px;
+        }
+      </style>
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <div class="section">
+                <h2 class="section_title section_title_big">聯絡我們 Contact Us</h2>
+                <form class="contact_form" method='post'>
+                  <ul>
+                    <li>
+                      <label>姓名<span class="required">*</span></label>
+                      <input type="text" name="name" id="cf_name">
+                    </li>
+                    <li>
+                      <label>Email<span class="required">*</span></label>
+                      <input type="email" name="email" id="cf_email">
+                    </li>
+                    <li>
+                      <label>主旨</label>
+                      <input type="text" name="subject" id="cf_subject">
+                    </li>
+                    <li>
+                      <label>留言內容</label>
+                      <textarea name="message" id="cf_message"></textarea>
+                    </li>
+                    <li>
+                      <button class="button button_grey">確認送出</button>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+            <!--Featured video-->
+              <div class="section">
+                <h3 class="section_title">Google Map</h3>
+                <div class="t_align_c">
+                  <div class="map_container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.5352174744617!2d120.55623691498778!3d24.082666684426627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346938e9dcf30825%3A0x68f868c7bf07ea0a!2zNTAw5b2w5YyW57ij5b2w5YyW5biC6YCy5b636LevMeiZnw!5e0!3m2!1szh-TW!2stw!4v1552259281298"></iframe>
+                  </div>
+                </div>
+                <ul class="contact_info_list">
+                  <li>
+                    <div class="clearfix"> <i class="fa fa-map-marker"></i>
+                      <p>地址：500彰化市進德路1號</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="clearfix"> <i class="fa fa-phone"></i>
+                      <p>電話：04-7232105轉1937、1938</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="clearfix m_bottom_10"> <i class="fa fa-envelope"></i>
+                      <p> <a href="mailto:#">polisci@cc2.ncue.edu.tw</a> </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </metal:block>
+  </metal:content-core>
+</body>
+
+</html>
