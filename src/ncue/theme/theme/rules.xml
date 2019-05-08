@@ -90,7 +90,7 @@
   <drop css:content="#edit-zone"/>
 
   <!-- banner -->
-  <after css:content=".banner" css:theme="#header" />
+  <!-- <after css:content=".banner" css:theme="#header" /> -->
   <!-- nav -->
   <replace css:content="#portal-globalnav" css:theme=".main_menu.menu_var2 ul" />
   <!-- logo -->
@@ -108,7 +108,8 @@
   <!-- sidebar -->
   <replace css:content="#sidebar" css:theme="#sidebar"/>
 
-  <drop css:content="#sidebar" css:if-content=".template-contact_us"/>
-  
+  <before css:content="#cover_img_banner"  css:theme="#above-content-container"/>
+  <before css:content=".section_8"  css:theme="#above-content-container"/>
+
 </rules>
 </rules>

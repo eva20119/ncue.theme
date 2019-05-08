@@ -1,0 +1,50 @@
+<?python
+    from plone import api
+    abs_url = api.portal.get().absolute_url()
+    ?>
+<div class="container" id='cover_img_banner'>
+  <div class="clearfix" >
+    <div class="two_third_column" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+      <div class="item">
+        <div class="scale_image_container">
+          <a href="#">
+            <img src="${abs_url}/banner/banner_left" alt="" class="scale_image">
+          </a>
+          <div class="caption_type_1">
+            <div class="caption_inner">
+              <div class="clearfix">
+                <a href="#" role="button" class="button banner_button sport">多元發展</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="one_third_column one_third_var2">
+      <div class="scale_image_container" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+        <a href="#">
+          <img src="${abs_url}/banner/banner_right_1" alt="" class="scale_image">
+        </a>
+        <div class="caption_type_1">
+          <div class="caption_inner">
+            <div class="clearfix"><a href="#" class="button banner_button business">多元師資</a></div>
+          </div>
+        </div>
+        <div class="canvas">
+          <div class="circle" id="circles-1"></div><br />
+        </div>
+      </div>
+      <div class="scale_image_container r_image_container" data-appear-animation="fadeInDown"
+        data-appear-animation-delay="1150">
+        <a href="#">
+          <img src="${abs_url}/banner/banner_right_2" alt="" class="scale_image">
+        </a>
+        <div class="caption_type_1">
+          <div class="caption_inner">
+            <div class="clearfix"><a href="#" class="button banner_button health">國際交流</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

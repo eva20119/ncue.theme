@@ -1,0 +1,26 @@
+<div class="section_8">
+  <div class="news_gallery news_gallery_var2" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+    <div class="container">
+      <h3 class="section_title">最新公告</h3>
+      <!--Gallery-->
+      <div id="owl-demo-5">
+        <div class="item" tal:repeat='item view/news'>
+          <div class="scale_image_container" tal:define="obj item/getObject">
+            <a href="${obj/absolute_url}">
+                <img tal:condition="obj/image" src="${obj/absolute_url}/@@images/image" alt="" class="scale_image">
+                <img tal:condition="not: obj/image" src="${abs_url}/resource/default_img" alt="" class="scale_image">
+            </a>
+            <!--caption-->
+           
+            <div class="caption_type_1">
+              <div class="caption_inner">
+                <a href="${obj/absolute_url}"><h4>${obj/title}</h4></a>
+                <div class="event_date">${python: obj.effective().strftime('%Y-%m-%d %H:%m')}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

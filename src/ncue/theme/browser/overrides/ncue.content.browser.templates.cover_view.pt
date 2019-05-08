@@ -5,89 +5,11 @@
 <body>
   <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
-      <div class="clearfix">
-        <div class="two_third_column" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
-          <div id="owl-demo-3" class="owl-carousel">
-            <div class="item">
-              <div class="scale_image_container"><a href="#"><img
-                    src="${view/context/absolute_url}/++theme++theme/images/banner_1-1.jpg" alt=""
-                    class="scale_image"></a>
-                <div class="caption_type_1">
-                  <div class="caption_inner">
-                    <div class="clearfix"><a href="#" role="button" class="button banner_button sport">多元發展</a>
-                      <div class="event_date">公民老師</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="scale_image_container"><a href="#"><img
-                    src="${view/context/absolute_url}/++theme++theme/images/banner_1-2.jpg" alt=""
-                    class="scale_image"></a>
-                <div class="caption_type_1">
-                  <div class="caption_inner">
-                    <div class="clearfix"><a href="#" role="button" class="button banner_button sport">多元發展</a>
-                      <div class="event_date">童軍老師</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="scale_image_container"><a href="#"><img
-                    src="${view/context/absolute_url}/++theme++theme/images/banner_1-3.jpg" alt=""
-                    class="scale_image"></a>
-                <div class="caption_type_1">
-                  <div class="caption_inner">
-                    <div class="clearfix"><a href="#" role="button" class="button banner_button sport">多元發展</a>
-                      <div class="event_date">公務人員</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="scale_image_container"><a href="#"><img
-                    src="${view/context/absolute_url}/++theme++theme/images/banner_1-4.jpg" alt=""
-                    class="scale_image"></a>
-                <div class="caption_type_1">
-                  <div class="caption_inner">
-                    <div class="clearfix"><a href="#" role="button" class="button banner_button sport">多元發展</a>
-                      <div class="event_date">英國雙聯學位</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="one_third_column one_third_var2">
-          <div class="scale_image_container" data-appear-animation="fadeInDown" data-appear-animation-delay="1150"><a
-              href="#"><img src="${view/context/absolute_url}/++theme++theme/images/banner_4-1_small.jpg" alt=""
-                class="scale_image"></a>
-            <div class="caption_type_1">
-              <div class="caption_inner">
-                <div class="clearfix"><a href="#" class="button banner_button business">多元師資</a></div>
-              </div>
-            </div>
-            <div class="canvas">
-              <div class="circle" id="circles-1"></div><br />
-            </div>
-          </div>
-          <div class="scale_image_container r_image_container" data-appear-animation="fadeInDown"
-            data-appear-animation-delay="1150"><a href="#"><img
-                src="${view/context/absolute_url}/++theme++theme/images/banner_5-1_small.jpg" alt=""
-                class="scale_image"></a>
-            <div class="caption_type_1">
-              <div class="caption_inner">
-                <div class="clearfix"><a href="#" class="button banner_button health">國際交流</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <?python
+      from plone import api
+      abs_url = api.portal.get().absolute_url()
+      ?>
+      
       <div class="container">
         <div class="row">
           <main id="main" class="col-md-8 col-sm-12">
@@ -96,15 +18,16 @@
                 data-appear-animation-delay="1150">
                 <!--tabs navigation-->
                 <div class="clearfix">
-                  <h3 class="section_title">最新公告</h3>
+                  <h3 class="section_title">活動看板</h3>
                 </div>
                 <!--tabs content-->
                 <div class="tabs_content post_var_inline">
-                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' tal:repeat="news view/news">
-                    <tal:def define="obj news/getObject">
+                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' tal:repeat="item view/event">
+                    <tal:def define="obj item/getObject">
                       <div class="scale_image_container">
                         <a href="${obj/absolute_url}">
-                          <img src="${obj/absolute_url}/images/image" alt="" class="scale_image">
+                          <img tal:condition="obj/image" src="${obj/absolute_url}/@@images/image" alt="" class="scale_image">
+                          <img tal:condition="not: obj/image" src="${abs_url}/resource/default_img" alt="" class="scale_image">
                         </a>
                       </div>
                       <div class="post_text">
@@ -119,29 +42,28 @@
           </main>
 
           <aside id="cover_sidebar" class="col-md-4 col-sm-12">
-            <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
-              <h3 class="section_title">活動看板</h3>
-              <!--Gallery-->
-              <div class="owl-demo-2">
-				        <div class="item" tal:repeat="item view/event">
-                  <div class="scale_image_container" tal:define="obj item/getObject">
-                    <a href="#"><img src="${view/context/absolute_url}/++theme++theme/images/news_carousel_img4.jpg" alt="" class="scale_image"></a>
-                    <!--caption-->
-                    <div class="caption_type_1">
-                      <div class="caption_inner">
-                        <div class="clearfix">
-                          <div class="event_date">${python: view.formatDate(obj.effective())}</div>
-                        </div>
-                      <a href="#"><h3>${obj/title}</h3></a>
-                      </div>
-                    </div>
-                    <div class="canvas">
-                      <div class="circle" id="circles-8"></div>
-                      <br />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="section" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+              <h3 class="section_title">系所訊息</h3>
+                <ul class="social_media_list clearfix">
+                <li>
+                    <a href="#" class="rss">
+                    <i class="fa fa-phone"></i>
+                    <p>聯絡電話</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="fb">
+                    <i class="fa fa-hand-o-right"></i>
+                    <p>系所法規</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="you_tube">
+                    <i class="fa fa-map-marker"></i>
+                    <p>交通與地圖</p>
+                    </a>
+                </li>
+              </ul>
             </div>
           </aside>
         </div>
