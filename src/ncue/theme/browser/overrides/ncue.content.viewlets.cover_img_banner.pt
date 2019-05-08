@@ -8,12 +8,12 @@
       <div class="item">
         <div class="scale_image_container">
           <a href="#">
-            <img src="${abs_url}/banner/banner_left" alt="" class="scale_image">
+            <img src="${python: view.banner_left.getObject().absolute_url()}/@@images/image" alt="" class="scale_image">
           </a>
           <div class="caption_type_1">
             <div class="caption_inner">
               <div class="clearfix">
-                <a href="#" role="button" class="button banner_button sport">多元發展</a>
+                <a href="#" role="button" class="button banner_button sport">${view/banner_left/Title}</a>
               </div>
             </div>
           </div>
@@ -23,11 +23,11 @@
     <div class="one_third_column one_third_var2">
       <div class="scale_image_container" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
         <a href="#">
-          <img src="${abs_url}/banner/banner_right_1" alt="" class="scale_image">
+          <img src="${python: view.banner_right_1.getObject().absolute_url()}/@@images/image" alt="" class="scale_image">
         </a>
         <div class="caption_type_1">
           <div class="caption_inner">
-            <div class="clearfix"><a href="#" class="button banner_button business">多元師資</a></div>
+            <div class="clearfix"><a href="#" class="button banner_button business">${view/banner_right_1/Title}</a></div>
           </div>
         </div>
         <div class="canvas">
@@ -37,11 +37,11 @@
       <div class="scale_image_container r_image_container" data-appear-animation="fadeInDown"
         data-appear-animation-delay="1150">
         <a href="#">
-          <img src="${abs_url}/banner/banner_right_2" alt="" class="scale_image">
+          <img src="${python: view.banner_right_2.getObject().absolute_url()}/@@images/image" alt="" class="scale_image">
         </a>
         <div class="caption_type_1">
           <div class="caption_inner">
-            <div class="clearfix"><a href="#" class="button banner_button health">國際交流</a></div>
+            <div class="clearfix"><a href="#" class="button banner_button business">${view/banner_right_2/Title}</a></div>
           </div>
         </div>
       </div>
