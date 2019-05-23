@@ -12,13 +12,13 @@
       
       <div class="container">
         <div class="row">
-          <main id="main" class="col-md-8 col-sm-12">
+          <main id="main" class="col-md-6 col-sm-12">
             <div class="section">
               <div class="tabs variation_2 variation_4" data-appear-animation="fadeInDown"
                 data-appear-animation-delay="1150">
                 <!--tabs navigation-->
                 <div class="clearfix">
-                  <h3 class="section_title">活動看板</h3>
+                  <h3 class="section_title">最新公告</h3>
                 </div>
                 <!--tabs content-->
                 <div class="tabs_content post_var_inline">
@@ -41,30 +41,42 @@
             </div>
           </main>
 
-          <aside id="cover_sidebar" class="col-md-4 col-sm-12">
-            <div class="section" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
-              <h3 class="section_title">系所訊息</h3>
-                <ul class="social_media_list clearfix">
-                <li>
-                    <a href="#" class="rss">
-                    <i class="fa fa-phone"></i>
-                    <p>聯絡電話</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="fb">
-                    <i class="fa fa-hand-o-right"></i>
-                    <p>系所法規</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="you_tube">
-                    <i class="fa fa-map-marker"></i>
-                    <p>交通與地圖</p>
-                    </a>
-                </li>
-              </ul>
+          <aside id="cover_sidebar" class="col-md-6 col-sm-12">
+<?python
+from plone import api
+portal = api.portal.get()
+brain = api.content.find(context=portal['department']['department_news'], depth=1, sort_on='effective_date', sort_limit=10)
+?>
+            <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
+              <h3 class="section_title">活動看板</h3>
+              <!--Gallery-->
+              <div class="owl-demo-2">
+
+
+                <div class="item" tal:repeat="item brain">
+                  <div class="scale_image_container">
+                    <a href="#"><img src="${item/getURL}/@@images/image/preview" alt="" class="scale_image"></a>
+                    <!--caption-->
+                    <div class="caption_type_1">
+                      <div class="caption_inner">
+                        <div class="clearfix">
+                          <div class="event_date">2019.04.01</div>
+                        </div>
+                        <a href="#"><h3>中國政治學會2019年會暨學術研討會</h3></a>
+                      </div>
+                    </div>
+                    <div class="canvas">
+                      <div class="circle" id="circles-8"></div>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
             </div>
+
           </aside>
         </div>
       </div>
