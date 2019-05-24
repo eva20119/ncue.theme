@@ -12,7 +12,7 @@
       
       <div class="container">
         <div class="row">
-          <main id="main" class="col-md-6 col-sm-12">
+          <main id="main" class="col-md-12 col-sm-12">
             <div class="section">
               <div class="tabs variation_2 variation_4" data-appear-animation="fadeInDown"
                 data-appear-animation-delay="1150">
@@ -22,30 +22,28 @@
                 </div>
                 <!--tabs content-->
                 <div class="tabs_content post_var_inline">
-                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' tal:repeat="item view/event">
+                  <tal:item tal:repeat="item view/event">
+<div class="news-item row">
                     <tal:def define="obj item/getObject">
-                      <div class="scale_image_container">
-                        <a href="${obj/absolute_url}">
-                          <img tal:condition="obj/image" src="${obj/absolute_url}/@@images/image" alt="" class="scale_image">
-                          <img tal:condition="not: obj/image" src="${abs_url}/resource/default_img" alt="" class="scale_image">
-                        </a>
-                      </div>
-                      <div class="post_text">
+                      <div class="post-text col-lg-9 col-md-9 col-sm-9 col-xs-9">
                         <a href="${obj/absolute_url}"><h4>${obj/title}</h4></a>
-                        <div class="event_date">${python: view.formatDate(obj.effective())}</div>
+                      </div>
+                      <div class="event-date col-lg-3 col-md-3 col-sm-3 col-xs-3">
+<span class="pull-right">${python: view.formatDate(obj.effective())}</span>
                       </div>
                     </tal:def>
-                  </div>
+</div>
+                  </tal:item>
                 </div>
               </div>
             </div>
           </main>
 
-          <aside id="cover_sidebar" class="col-md-6 col-sm-12">
+          <aside id="cover_sidebar" class="col-md-12 col-sm-12">
 <?python
 from plone import api
 portal = api.portal.get()
-brain = api.content.find(context=portal['department']['department_news'], depth=1, sort_on='effective_date', sort_limit=10)
+brain = api.content.find(context=portal['department']['department_news'], depth=1, sort_on='effective_date', sort_limit=6)
 ?>
             <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
               <h3 class="section_title">活動看板</h3>
@@ -81,6 +79,15 @@ brain = api.content.find(context=portal['department']['department_news'], depth=
         </div>
       </div>
 
+<style>
+
+.news-item{
+  padding: 10px 0;
+}
+.post-text h4 {
+  font-size: 16px;
+}
+</style>
     </metal:block>
   </metal:content-core>
 </body>

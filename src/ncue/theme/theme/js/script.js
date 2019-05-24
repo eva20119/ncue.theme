@@ -214,9 +214,10 @@
 		window.footer_slider = function(){
 
 			$(".owl-demo-2").owlCarousel({
-			  items : 1,
+			  items : 5,
 		      navigation : true, // Show next and prev buttons
 		      nav : true,
+                      autoplay:true,
 		      loop:true,
 		      navSpeed: 800,
 		      navText:false
