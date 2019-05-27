@@ -7,7 +7,10 @@
      i18n:domain="plone">
 
   <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
-  
+<?python
+from plone import api
+portal = api.portal.get()
+?>  
   <nav class="plone-navbar" id="portal-globalnav-wrapper">
     <div class="container">
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
@@ -25,11 +28,11 @@
                                     title tab/description|nothing;
                                     target tab/link_target|nothing;">
                 </a>
-                <tal:def tal:define="child python: view.getChildNode(tid)">
+                <tal:def tal:define="child python: portal[tid].getChildNodes() if portal.get(tid) else None">
                   <div class="sub_menu_wrap type_2 clearfix" tal:condition="child">
                     <ul>
                       <tal:rep repeat="item child">
-                        <li><a href="${python: child[item]}">${item}</a></li>
+                        <li><a href="${item/absolute_url}">${item/title}</a></li>
                       </tal:rep>
                     </ul>
                   </div>
