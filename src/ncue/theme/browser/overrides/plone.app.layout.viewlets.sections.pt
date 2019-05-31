@@ -24,7 +24,7 @@ portal = api.portal.get()
                                   class python:selected_tab==tid and 'current' or nothing">
                 <a href=""
                     tal:content="tab/name"
-                    tal:attributes="href tab/url;
+                    tal:attributes="href python:tab['url'] if repeat['tab'].start else 'javascript:void(0)';
                                     title tab/description|nothing;
                                     target tab/link_target|nothing;">
                 </a>

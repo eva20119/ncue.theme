@@ -106,7 +106,7 @@
   <drop css:content=".breadcrumb" css:if-content=".template-cover_view"/>
 
   <!-- sidebar -->
-  <replace css:content="#sidebar" css:theme="#sidebar"/>
+  <replace css:content-children="#portal-column-two" css:theme-children="#sidebar"/>
 
   <before css:content="#cover_img_banner"  css:theme="#above-content-container"/>
   <before css:content=".section_8"  css:theme="#above-content-container"/>
