@@ -41,7 +41,7 @@
         </a>
         <div class="caption_type_1">
           <div class="caption_inner">
-            <div class="clearfix"><a href="#" class="button banner_button business">${view/banner_right_2/Title}</a></div>
+            <div class="clearfix"><a style="background:#f6670f" href="#" class="button banner_button business">${view/banner_right_2/Title}</a></div>
           </div>
         </div>
       </div>

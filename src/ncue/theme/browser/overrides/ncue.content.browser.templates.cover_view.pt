@@ -43,7 +43,7 @@
 <?python
 from plone import api
 portal = api.portal.get()
-brain = api.content.find(context=portal['department']['department_news'], depth=1, sort_on='effective_date', sort_limit=6)
+brain = api.content.find(context=portal['department']['department_event'], depth=1, sort_on='effective_date', sort_limit=6)
 ?>
             <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
               <h3 class="section_title">活動看板</h3>
@@ -53,19 +53,18 @@ brain = api.content.find(context=portal['department']['department_news'], depth=
 
                 <div class="item" tal:repeat="item brain">
                   <div class="scale_image_container">
-                    <a href="#"><img src="${item/getURL}/@@images/image/preview" alt="" class="scale_image"></a>
+                    <a href="${item/getURL}" tal:switch="python:bool(item.getObject().image)">
+                      <img tal:case="True" src="${item/getURL}/@@images/image/preview" alt="" class="scale_image">
+                      <img tal:case="False" src="${portal/absolute_url}/resource/default_img/@@images/image/preview" alt="" class="scale_image">
+                    </a>
                     <!--caption-->
                     <div class="caption_type_1">
                       <div class="caption_inner">
                         <div class="clearfix">
-                          <div class="event_date">2019.04.01</div>
+                          <div class="event_date">${python:item.effective.strftime('%Y.%m.%d')}</div>
                         </div>
-                        <a href="#"><h3>中國政治學會2019年會暨學術研討會</h3></a>
+                        <a href="${item/getURL}"><h3>${item/Title}</h3></a>
                       </div>
-                    </div>
-                    <div class="canvas">
-                      <div class="circle" id="circles-8"></div>
-                      <br />
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,46 @@
+aside .section_title  {
+  border-top: none;
+}
+
+.template-tabular_view #content-core .has-table {
+  margin: 30px 0;
+}
+
+.template-tabular_view #content-core .has-table table {
+  width: 100%;
+}
+
+.template-tabular_view .has-table th, .template-tabular_view .has-table td {
+  border: solid #999 1px;
+  padding: 5px;
+}
+
+.template-tabular_view .pagination  {
+  margin-left: 0;
+}
+
+.template-tabular_view nav.pagination ul li{
+  border: solid #999;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+}
+.template-tabular_view nav.pagination ul li:first-child {
+  border-left-width: 1px;
+}
+
+.template-tabular_view nav.pagination ul li, .template-tabular_view nav.pagination ul li a:hover {
+  margin-left: 0;
+}
+
+.template-tabular_view nav.pagination ul li.disabled span{
+  line-height: 2.25;
+  padding: 5px 11px;
+}
+
 #sidebar h3 {
-  font-size: 18px;
+  font-size: 22px;
 }
 #sidebar li.navTreeItem  {
   font-size: 16px;
@@ -19,4 +60,58 @@
 #content-core {
   margin-top: 30px;
   position: relative;
+}
+
+aside#sidebar .navTree .navTreeItem {
+    margin: 12px 0;
+    padding: 20px 28px;
+    border-radius:10px;
+    box-shadow: 4px 4px 3px rgba(20%,20%,40%,0.5);
+    border-bottom:none;
+}
+
+aside#sidebar .navTree .navTreeItem:nth-child(1) {
+    background: #ff680d;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(2) {
+    background: #854ec2;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(3) {
+    background: #13b7ff;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(4) {
+    background: #feb41c;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(5) {
+    background: #00ada7;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(6) {
+    background: #ff680d;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(7) {
+    background: #854ec2;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(8) {
+    background: #13b7ff;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(9) {
+    background: #feb41c;
+}
+aside#sidebar .navTree .navTreeItem:nth-child(10) {
+    background: #00ada7;
+}
+
+
+
+aside#sidebar .navTree .navTreeItem a{
+    color: #fff;
+}
+
+.template-custom_newsitem_view #content-core,
+.template-document_view #content-core {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 25px;
+    background:#eee;
+    box-shadow: 4px 4px 3px rgba(20%,20%,40%,0.5);
 }

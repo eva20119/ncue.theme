@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <metal:listingmacro define-macro="listing">
+    <tal:results define="batch view/batch;">
+        <tal:listing condition="batch">
+            <?python
+              from plone import api
+              abs_url = api.portal.get().absolute_url()
+            ?>
+            <tal:repeat repeat="item batch" metal:define-macro="entries">
+                <tal:block tal:define="obj item/getObject;
+                    item_url item/getURL;
+                    item_title item/Title;
+                    ">
+                    <div class='col-md-5 col-xs-12' style='padding: 5px;border: 2px solid #cccccc70;border-radius: 5px;margin: 3px'>
+                        <div class='col-md-7 col-xs-7'>
+                            <p tal:content="structure item/list/raw"/>
+                            <a href="${item_url}/teacher_detail">詳細資料>></a>
+                        </div>
+                        <div class='col-md-5 col-xs-5'>
+                                <img src="${item_url}/@@images/img" style='border: 1px solid #ccc;padding: 3px' tal:condition='item/img'/>
+                        </div>
+                    </div>
+                </tal:block>
+            </tal:repeat>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="pagination-bar pagination_block">
+                        <div class="pagination-bar" metal:use-macro="context/batch_macros/macros/navigation" />
+                    </div>
+                </div>
+            </div>
+
+        </tal:listing>
+    </tal:results>
+  </metal:listingmacro>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
