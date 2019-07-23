@@ -139,3 +139,16 @@ aside#sidebar .navTree .navTreeItem a{
 #cover-news-section h3{
   color: #3e454c;
 }
+
+#portal-sitemap{
+  font-size: 16px;
+}
+#portal-sitemap a {
+  line-height: 30px;
+}
+#portal-sitemap .navTree.navTreeLevel2 {
+  padding-left: 30px;
+}
+#portal-sitemap .navTree.navTreeLevel3 {
+  padding-left: 30px;
+}
