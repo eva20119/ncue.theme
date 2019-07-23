@@ -5,16 +5,11 @@
 <body>
   <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
-      <?python
-      from plone import api
-      abs_url = api.portal.get().absolute_url()
-      ?>
-      
       <div class="container">
         <div class="row">
           <main id="main" class="col-md-12 col-sm-12">
             <div class="section">
-              <div class="tabs variation_2 variation_4" data-appear-animation="fadeInDown"
+              <div id="cover-news-section" class="tabs variation_2 variation_4" data-appear-animation="fadeInDown"
                 data-appear-animation-delay="1150">
                 <!--tabs navigation-->
                 <div class="clearfix">
@@ -22,7 +17,7 @@
                 </div>
                 <!--tabs content-->
                 <div class="tabs_content post_var_inline">
-                  <tal:item tal:repeat="item view/event">
+                  <tal:item tal:repeat="item view/news">
 <div class="news-item row">
                     <tal:def define="obj item/getObject">
                       <div class="post-text col-lg-9 col-md-9 col-sm-9 col-xs-9">
@@ -40,22 +35,17 @@
           </main>
 
           <aside id="cover_sidebar" class="col-md-12 col-sm-12">
-<?python
-from plone import api
-portal = api.portal.get()
-brain = api.content.find(context=portal['department'], depth=2, portal_type='News Item', sort_on='effective', sort_limit=6, sort_order='descending')
-?>
             <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
               <h3 class="section_title">活動看板</h3>
               <!--Gallery-->
               <div class="owl-demo-2">
 
 
-                <div class="item" tal:repeat="item brain">
+                <div class="item" tal:repeat="item view/event">
                   <div class="scale_image_container">
                     <a href="${item/getURL}" tal:switch="python:bool(item.getObject().image)">
                       <img tal:case="True" src="${item/getURL}/@@images/image/preview" alt="" class="scale_image">
-                      <img tal:case="False" src="${portal/absolute_url}/resource/default_img/@@images/image/preview" alt="" class="scale_image">
+                      <img tal:case="False" src="${portal_url}/resource/default_img/@@images/image/preview" alt="" class="scale_image">
                     </a>
                     <!--caption-->
                     <div class="caption_type_1">

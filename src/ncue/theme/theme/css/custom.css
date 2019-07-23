@@ -131,3 +131,11 @@ aside#sidebar .navTree .navTreeItem a{
     width: 48%;
   }
 }
+
+#cover-news-section {
+    border-top: 1px solid #3e454c;
+}
+
+#cover-news-section h3{
+  color: #3e454c;
+}
