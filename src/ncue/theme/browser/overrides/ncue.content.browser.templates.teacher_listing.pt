@@ -17,23 +17,26 @@
               from plone import api
               abs_url = api.portal.get().absolute_url()
             ?>
+<div class="row">
             <tal:repeat repeat="item batch" metal:define-macro="entries">
                 <tal:block tal:define="obj item/getObject;
                     item_url item/getURL;
                     item_title item/Title;
                     ">
-                    <div class='col-md-5 col-xs-12' style='padding: 5px;border: 2px solid #cccccc70;border-radius: 5px;margin: 3px'>
-                        <div class='col-md-7 col-xs-7'>
+                    <div class='col col-md-6 col-sm-12 teacher'>
+                      <div class="row">
+                        <div class='col col-xs-5'>
+                                <img src="${item_url}/@@images/img" tal:condition='item/img'/>
+                        </div>
+                        <div class='col col-xs-7'>
                             <p tal:content="structure item/list/raw"/>
                             <a href="${item_url}/teacher_detail">詳細資料>></a>
                         </div>
-                        <div class='col-md-5 col-xs-5'>
-                                <img src="${item_url}/@@images/img" style='border: 1px solid #ccc;padding: 3px' tal:condition='item/img'/>
-                        </div>
+                      </div>
                     </div>
                 </tal:block>
             </tal:repeat>
-
+</div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="pagination-bar pagination_block">

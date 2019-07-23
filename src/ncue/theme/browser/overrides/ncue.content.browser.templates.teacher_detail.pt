@@ -11,8 +11,12 @@
 <metal:block define-macro="content-core">
 
 <h3>${view/context/Title}</h3>
+<br>
+<hr>
+<br>
 
-<img src="${python: view.context.absolute_url()}/@@images/img"/>
+<img tal:condition="view/context/img" src="${python: view.context.absolute_url()}/@@images/img/mini"/>
+<br><br>
 <p tal:content='structure view/context/detail/raw'/>
 
 

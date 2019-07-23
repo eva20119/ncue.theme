@@ -43,7 +43,7 @@
 <?python
 from plone import api
 portal = api.portal.get()
-brain = api.content.find(context=portal['department']['department_event'], depth=1, sort_on='effective_date', sort_limit=6)
+brain = api.content.find(context=portal['department'], depth=2, portal_type='News Item', sort_on='effective', sort_limit=6, sort_order='descending')
 ?>
             <div class="section photo_gallery" data-appear-animation="fadeInDown" data-appear-animation-delay="1150">
               <h3 class="section_title">活動看板</h3>

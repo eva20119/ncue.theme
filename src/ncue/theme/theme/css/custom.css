@@ -119,3 +119,15 @@ aside#sidebar .navTree .navTreeItem a{
 #portal-logo img {
   width: 400px;
 }
+
+.template-teacher_listing #content-core .teacher {
+  border: 1px solid #ccc;
+  margin: 1%;
+  padding: 8px;
+}
+
+@media (min-width: 992px) {
+  .col-md-6 {
+    width: 48%;
+  }
+}
