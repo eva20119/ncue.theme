@@ -51,9 +51,23 @@ b, strong{
   font-weight: bold !important;
 }
 
-ul,ol{
+ul, ol{
   list-style: none;
 }
+#content-core ol {
+  list-style: decimal;
+}
+#content-core ul {
+  list-style: disc;
+}
+
+#content-core ol ol, #content-core ul ul{
+  padding-left: 20px;
+}
+#content-core ol ol ol, #content-core ul ul ul{
+  padding-left: 20px;
+}
+
 
 q{
   quotes: none;
