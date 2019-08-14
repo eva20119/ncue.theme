@@ -32,7 +32,9 @@ portal = api.portal.get()
                   <div class="sub_menu_wrap type_2 clearfix" tal:condition="child">
                     <ul>
                       <tal:rep repeat="item child">
-                        <li><a href="${item/absolute_url}">${item/title}</a></li>
+                        <li tal:condition="python: item.portal_type in ['Folder', 'Document']">
+                          <a href="${item/absolute_url}">${item/title}</a>
+                        </li>
                       </tal:rep>
                     </ul>
                   </div>

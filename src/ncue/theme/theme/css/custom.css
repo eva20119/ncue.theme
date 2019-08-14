@@ -152,3 +152,7 @@ aside#sidebar .navTree .navTreeItem a{
 #portal-sitemap .navTree.navTreeLevel3 {
   padding-left: 30px;
 }
+
+#content-core img {
+  padding: 10px;
+}

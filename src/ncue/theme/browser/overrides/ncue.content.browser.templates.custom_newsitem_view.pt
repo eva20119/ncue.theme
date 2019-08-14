@@ -12,9 +12,24 @@
 
     <h4 tal:condition="python: view.context.file_1 or view.context.file_2">檔案下載</h4>
     <a tal:condition="view/context/file_1" href="${view/context/absolute_url}/@@download/file_1">${view/context/file_1/filename}</a>
-    <a tal:condition="view/context/file_2" href="${view/context/absolute_url}/@@download/file_2">${view/context/file_2/filename}</a>
+    <a tal:condition="view/context/file_2" href="${view/context/absolute_url}/@@download/file_2">/ ${view/context/file_2/filename}</a>
+    <a tal:condition="view/context/file_3" href="${view/context/absolute_url}/@@download/file_3">/ ${view/context/file_3/filename}</a>
+
+<script>
+window.onload = function(){
+imgList = document.querySelectorAll('#content-core img')
+for(img of imgList){
+  if(img.width == 24 && img.height == 24){
+    img.setAttribute('hidden', true)
+  }
+}
+}
+</script>
+
+
   </metal:block>
   </metal:content-core>
+
 </body>
 
 </html>

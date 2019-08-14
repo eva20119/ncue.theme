@@ -60,6 +60,9 @@ ul, ol{
 #content-core ul {
   list-style: disc;
 }
+#content-core ul.pagination{
+  list-style: none;
+}
 
 #content-core ol ol, #content-core ul ul{
   padding-left: 20px;
