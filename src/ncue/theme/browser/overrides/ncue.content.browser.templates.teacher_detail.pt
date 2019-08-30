@@ -9,16 +9,134 @@
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
+<style>
+    td, th{
+        padding: 8px !important;
+        font-size: 19px;
+    }
+    .btn{
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        display: inline-block;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: .375rem .75rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        margin-top: .25rem;
+        margin-bottom: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .active{
+        color: #fff;
+        background-color: #545b62;
+        border-color: #4e555b;
+    }
+    .hide{
+        display: none;
+    }
+</style>
 
-<h3>${view/context/Title}</h3>
-<br>
-<hr>
-<br>
+    <button data-target='basic'  class="btn active">基本資料</button>
+    <button data-target='experience'  class="btn">教師經歷</button>
+    <button data-target='write'  class="btn">著作種類</button>
+    <button data-target='plane'  class="btn">教師計畫</button>
+    <button data-target='award'  class="btn">獲獎紀錄</button>
+    <button data-target='invention'  class="btn">發明紀錄</button>
+    <button data-target='license'  class="btn">相關證照</button>
+    <button data-target='event'  class="btn">教師學術活動</button>
+    <button data-target='train'  class="btn">教師進修資料</button>
+    <button data-target='promo'  class="btn">教師升等資料</button>
+    <button data-target='teach'  class="btn">教師授課資料</button>
+    <button data-target='server'  class="btn">教師專業服務</button>
+    <br><br>
 
-<img tal:condition="view/context/img" src="${python: view.context.absolute_url()}/@@images/img/mini"/>
-<br><br>
-<p tal:content='structure view/context/detail/raw'/>
+    <div col='col-md-12'  id='basic'>
+        <div class="row">
+            <div class="col-md-3">
+                <img src='${view/context/absolute_url}/@@images/img' tal:condition='view/context/img'/>
+                <div style='width: 200px;height: 230px;background: grey' tal:condition='not: view/context/img'/>
+            </div>
+            <div class="col-md-9">
+                <table style='width: 100%'>
+                    <tr>
+                        <td>姓名</td>
+                        <td>
+                            ${view/context/title}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>職稱</td>
+                        <td>${view/context/job}</td>
+                    </tr>
+                    <tr>
+                        <td>最高學歷</td>
+                        <td>${view/context/graduaction}</td>
+                    </tr>
+                    <tr>
+                        <td>專業領域</td>
+                        <td>${view/context/specialty}</td>
+                    </tr>
+                    <tr>
+                        <td>電子信箱</td>
+                        <td>${view/context/email}</td>
+                    </tr>
+                    <tr>
+                        <td>分機</td>
+                        <td>${view/context/code}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
 
+    <div class='hide' id='experience' tal:content='structure view/context/experience/output' tal:condition='view/context/experience'/>
+    <div class='hide' id='write' tal:content='structure view/context/write/output' tal:condition='view/context/write'/>
+    <div class='hide' id='plane' tal:content='structure view/context/plane/output' tal:condition='view/context/plane'/>
+    <div class='hide' id='award' tal:content='structure view/context/award/output' tal:condition='view/context/award'/>
+    <div class='hide' id='invention' tal:content='structure view/context/invention/output' tal:condition='view/context/invention'/>
+    <div class='hide' id='license' tal:content='structure view/context/license/output' tal:condition='view/context/license'/>
+    <div class='hide' id='event' tal:content='structure view/context/event/output' tal:condition='view/context/event'/>
+    <div class='hide' id='train' tal:content='structure view/context/train/output' tal:condition='view/context/train'/>
+    <div class='hide' id='promo' tal:content='structure view/context/promo/output' tal:condition='view/context/promo'/>
+    <div class='hide' id='teach' tal:content='structure view/context/teach/output' tal:condition='view/context/teach'/>
+    <div class='hide' id='server' tal:content='structure view/context/server/output' tal:condition='view/context/server'/>
+
+
+<script>
+window.onload = function() {
+    btn = document.querySelectorAll('.btn')
+    for(i of btn){
+        i.addEventListener('click', function(){
+            <!-- 舊btn -->
+            old = document.querySelector('.active')
+            old.className = 'btn'
+            oldTarget = old.dataset['target']
+            oldTable = document.querySelector('#' + oldTarget)
+            if(oldTable){
+                oldTable.className = 'hide'
+            }
+
+            <!-- 新btn -->
+            this.className = 'btn active'
+            target = this.dataset['target']
+            table = document.querySelector('#' + target)
+            if(table){
+                table.className = ''
+            }
+
+        })
+    }
+}
+</script>
 
 </metal:block>
 </metal:content-core>

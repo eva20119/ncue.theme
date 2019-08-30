@@ -17,20 +17,54 @@
               from plone import api
               abs_url = api.portal.get().absolute_url()
             ?>
-<div class="row">
+            <div class="row">
+            <style>
+                td{
+                    padding: 8px !important;
+                }
+            </style>
             <tal:repeat repeat="item batch" metal:define-macro="entries">
                 <tal:block tal:define="obj item/getObject;
                     item_url item/getURL;
                     item_title item/Title;
                     ">
-                    <div class='col col-md-6 col-sm-12 teacher'>
+                    <div class='col col-md-10 col-sm-12 teacher'>
                       <div class="row">
-                        <div class='col col-xs-5'>
-                                <img src="${item_url}/@@images/img" tal:condition='item/img'/>
+                        <div class='col col-xs-4'>
+                            <a href="${item_url}/teacher_detail">
+                                <img src="${item_url}/@@images/img" tal:condition='item/img' style='width: 200px;height: 230px'/>
+                                <div style='width: 200px;height: 230px;background: grey' tal:condition='not: item/img'/>
+                            </a>
                         </div>
-                        <div class='col col-xs-7'>
-                            <p tal:content="structure item/list/raw"/>
-                            <a href="${item_url}/teacher_detail">詳細資料>></a>
+                        <div class='col col-xs-8'>
+                            <table style='width: 100%'>
+                                <tr>
+                                    <td style='width: 124px'>姓名</td>
+                                    <td>
+                                        <a href="${item_url}/teacher_detail">${item/title}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>職稱</td>
+                                    <td>${item/job}</td>
+                                </tr>
+                                <tr>
+                                    <td>最高學歷</td>
+                                    <td>${item/graduaction}</td>
+                                </tr>
+                                <tr>
+                                    <td>專業領域</td>
+                                    <td>${item/specialty}</td>
+                                </tr>
+                                <tr>
+                                    <td>電子信箱</td>
+                                    <td>${item/email}</td>
+                                </tr>
+                                <tr>
+                                    <td>分機</td>
+                                    <td>${item/code}</td>
+                                </tr>
+                            </table>
                         </div>
                       </div>
                     </div>

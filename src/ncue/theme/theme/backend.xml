@@ -93,7 +93,7 @@
     <!-- Central column -->
     <replace css:theme="#content-container" method="raw">
       <xsl:variable name="central">
-        <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
+        <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-9</xsl:if>
         <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
         <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
         <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
@@ -127,7 +127,7 @@
     </rules>
 
     <!-- Right column -->
-    <rules css:if-content="#portal-column-two">
+    <!-- <rules css:if-content="#portal-column-two">
       <replace css:theme="#column2-container">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">
           <aside id="portal-column-two">
@@ -135,12 +135,11 @@
           </aside>
         </div>
       </replace>
-    </rules>
+    </rules> -->
 
     <!-- Content header -->
     <drop css:theme="#portal-top" />
     <drop css:theme="#portal-footer-wrapper" />
-
   </rules>
 
 </rules>

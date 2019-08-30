@@ -25,6 +25,10 @@
   padding: 0;
   border: none;
 }
+#content-core td, th, table{
+  border: 1px solid #999;
+  vertical-align: middle;
+}
 
 article,aside,audio,canvas,command,datalist,details,embed,div,div,footer,header,hgroup,keygen,meter,nav,output,progress,div,source,video,main{display:block}mark,rp,rt,ruby,summary,time{display:inline}
 a, abbr, acronym, address, applet, article, aside, audio,b, blockquote, big, body,center, canvas, caption, cite, code, command,datalist, dd, del, details, dfn, dl, div, dt, em, embed,fieldset, div, div, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html,i, iframe, img, ins,kbd, keygen,label, legend, li, meter,nav,object, ol, output,p, pre, progress,q, s, samp, div, small, span, source, strike, strong, sub, sup,table, tbody, tfoot, thead, th, tr, tdvideo, tt,u, ul, var{
@@ -312,7 +316,7 @@ p a:hover{
 .typography li h4,
 .typography li h5,
 .typography li h6{
-  font-family: 'Roboto', 'sans-serif'
+  font-family: 'Roboto', 'sans-serif';
   font-weight: 600;
   color: #3e454c;
   line-height: 1em;
@@ -405,7 +409,9 @@ p a:hover{
     width: 100%;
     display: inline-block;
   }
-
+    .login_block{
+      float: right;
+    }
     .login_block > ul > li,
     .login_block > ul > li > a{
       color: #212428;
